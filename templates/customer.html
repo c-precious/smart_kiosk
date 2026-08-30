@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers - Smart Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+        <h1>Smart Kiosk</h1>
+        <div class="header-right">
+            <p id="customersDate"></p>
+        </div>
+    </header>
+
+    <section class="welcome-section">
+        <h2 id="customersShopName">Customers</h2>
+        <p>View, search and add customers for this shop</p>
+    </section>
+
+    <section class="customers-main-card">
+
+        <div class="customers-header-row">
+            <h3>Customer List</h3>
+            <input type="text" id="customerSearch" placeholder="Search customer...">
+        </div>
+
+        <div class="customers-table-header">
+            <div>Name</div>
+            <div>Phone</div>
+            <div>Date Added</div>
+            <div>Action</div>
+        </div>
+
+        <div class="customers-scroll-box">
+            <div id="customersList"></div>
+        </div>
+
+        <button id="showAddCustomerBtn" class="add-product-small-btn">
+            + Add Customer
+        </button>
+
+    </section>
+
+</div>
+
+<!-- Add Customer Popup -->
+<div id="addCustomerPopup" class="popup hidden">
+    <div class="popup-content">
+        <h3>Add Customer</h3>
+
+        <input type="text" id="customerName" placeholder="Customer Name">
+        <input type="text" id="customerPhone" placeholder="Phone Number">
+
+        <button id="addCustomerBtn">Save Customer</button>
+        <button id="closeCustomerPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+<!-- Edit Customer Popup -->
+<div id="editCustomerPopup" class="popup hidden">
+    <div class="popup-content">
+        <h3>Edit Customer</h3>
+
+        <input type="hidden" id="editCustomerId">
+
+        <input type="text" id="editCustomerName" placeholder="Customer Name">
+        <input type="text" id="editCustomerPhone" placeholder="Phone Number">
+
+        <button id="updateCustomerBtn">Update Customer</button>
+        <button id="closeEditCustomerPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+<div class="bottom-back">
+    <a href="/shop-page">← Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Kiosk Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+    <h1>Smart Kiosk</h1>
+
+    <div class="header-right">
+        <a href="/profile-page" class="profile-btn">Profile</a>
+        <p id="currentDate"></p>
+    </div>
+    </header>
+
+    <section class="welcome-section">
+        <h2 id="welcomeText">Hello</h2>
+    </section>
+
+    <section class="stores-section">
+        <h3>Your Stores</h3>
+
+        <div id="shopsContainer" class="card-grid"></div>
+
+        <button id="showAddShopBtn" class="add-btn">+ Add Store</button>
+    </section>
+
+    <div id="addShopBox" class="popup hidden">
+        <div class="popup-content">
+            <h3>Add New Store</h3>
+
+            <input type="text" id="shopName" placeholder="Shop Name">
+            <input type="text" id="shopLocation" placeholder="Location">
+            <!-- Add inside Add New Store popup, after Location input -->
+
+            <select id="businessType">
+                <option value="product">Product Business</option>
+                <option value="service">Service Business</option>
+            </select>
+
+            <select id="serviceCategory">
+                <option value="">Select Service Type</option>
+                <option value="salon">Salon</option>
+                <option value="barber">Barber</option>
+                <option value="tailor">Tailor</option>
+                <option value="bodaboda">Bodaboda</option>
+            </select>
+
+            <button id="saveShopBtn">Save Store</button>
+            <button id="closePopupBtn" class="secondary-btn">Cancel</button>
+        </div>
+    </div>
+    <div id="editShopBox" class="popup hidden">
+    <div class="popup-content">
+        <h3>Edit Shop</h3>
+
+        <input type="hidden" id="editShopId">
+
+        <input type="text" id="editShopName" placeholder="Shop Name">
+        <input type="text" id="editShopLocation" placeholder="Location">
+                <select id="editBusinessType">
+            <option value="product">Product Business</option>
+            <option value="service">Service Business</option>
+        </select>
+
+        <select id="editServiceCategory">
+            <option value="">Select Service Type</option>
+            <option value="salon">Salon</option>
+            <option value="barber">Barber</option>
+            <option value="tailor">Tailor</option>
+        </select>
+
+        <button id="updateShopBtn">Update Shop</button>
+        <button id="closeEditShopPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

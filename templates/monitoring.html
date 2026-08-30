@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Worker Monitoring - Smart Kiosk</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+        <h1>Smart Kiosk</h1>
+
+        <div class="header-right">
+            <p id="monitoringDate"></p>
+        </div>
+    </header>
+
+    <section class="welcome-section">
+        <h2 id="monitoringWorkerName">
+            Worker Activity
+        </h2>
+
+        <p>
+            View worker activity and system actions
+        </p>
+    </section>
+
+    <section class="profile-card">
+
+        <div class="activity-table-header">
+            <div>Action</div>
+            <div>Shop</div>
+            <div>Date & Time</div>
+        </div>
+
+        <div id="monitoringList"></div>
+
+    </section>
+
+</div>
+
+<div class="bottom-back">
+    <a href="/profile-page">← Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

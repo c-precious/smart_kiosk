@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - Smart Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+        <h1>Smart Kiosk</h1>
+        <div class="header-right">
+            <p id="profileDate"></p>
+        </div>
+    </header>
+
+    <section class="welcome-section">
+        <h2>Account Settings</h2>
+        <p>Manage your profile, workers and shop access</p>
+    </section>
+
+    <section class="profile-card">
+
+        <h3>Profile Details</h3>
+
+        <input type="hidden" id="profileUserId">
+
+        <label>Name</label>
+        <input type="text" id="profileName" placeholder="Owner name">
+
+        <label>Email</label>
+        <input type="email" id="profileEmail" placeholder="Email address">
+
+        <label>Phone</label>
+        <input type="text" id="profilePhone" placeholder="Phone number">
+
+        <label>Date Joined</label>
+        <input type="text" id="profileCreatedAt" readonly>
+
+        <div class="profile-actions">
+            <button id="updateProfileBtn">Update Profile</button>
+            <button id="logoutBtn" class="secondary-btn">Logout</button>
+        </div>
+
+    </section>
+
+    <section class="profile-card" id="workerAccessSection">
+
+        <div class="worker-header-row">
+            <h3>Worker Access</h3>
+            <button id="showAddWorkerBtn" class="small-green-btn">+ Add Worker</button>
+        </div>
+
+        <div class="worker-table-header">
+            <div>Name</div>
+            <div>Phone</div>
+            <div>Assigned Shop</div>
+            <div>Monitor</div>
+            <div>Action</div>
+        </div>
+
+        <div id="workersList"></div>
+
+    </section>
+
+</div>
+
+<!-- Add Worker Popup -->
+<div id="addWorkerPopup" class="popup hidden">
+    <div class="popup-content">
+        <h3>Add Worker</h3>
+
+        <input type="text" id="workerName" placeholder="Worker Name">
+        <input type="email" id="workerEmail" placeholder="Worker Email">
+        <input type="text" id="workerPhone" placeholder="Worker Phone">
+        <input type="password" id="workerPassword" placeholder="Worker Password">
+
+        <select id="workerAssignedShop">
+            <option value="">Select Assigned Shop</option>
+        </select>
+
+        <button id="saveWorkerBtn">Save Worker</button>
+        <button id="closeWorkerPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+
+<div class="bottom-back">
+    <a href="/dashboard-page">← Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

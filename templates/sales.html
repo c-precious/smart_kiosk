@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales - Smart Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+        <h1>Smart Kiosk</h1>
+        <div class="header-right">
+            <p id="salesDate"></p>
+        </div>
+    </header>
+
+    <section class="welcome-section">
+        <h2 id="salesShopName">Sales</h2>
+        <p>Record daily sales and track recent transactions</p>
+    </section>
+
+    <section class="sales-main-card">
+
+        <h3>Record Sale</h3>
+
+        <div class="sales-form-row">
+            <input list="salesProductsList" id="saleProductSearch" placeholder="Type product name...">
+            <datalist id="salesProductsList"></datalist>
+            <input type="hidden" id="saleProduct">
+
+            <input type="number" id="saleQuantity" placeholder="Quantity">
+
+            <select id="paymentMethod">
+                <option value="">Select Payment</option>
+                <option value="Cash">Cash</option>
+                <option value="Mpesa">M-Pesa</option>
+                <option value="Debt">Debt</option>
+            </select>
+
+            <input type="text" id="saleCustomerName" placeholder="Customer name" class="hidden-sale-field">
+            <input type="text" id="salePhone" placeholder="Phone number" class="hidden-sale-field">
+            <input type="date" id="saleDueDate" class="hidden-sale-field">
+
+            <button id="recordSaleBtn">Record Sale</button>
+        </div>
+
+        <p id="saleHint" class="sale-hint"></p>
+
+    </section>
+
+    <section class="sales-main-card">
+
+        <div class="stock-header-row">
+            <h3>Recent Sales</h3>
+        </div>
+
+        <div class="sales-table-header">
+            <div>Sale ID</div>
+            <div>Product</div>
+            <div>Qty</div>
+            <div>Total</div>
+            <div>Payment</div>
+            <div>Customer</div>
+            <div>Date & Time</div>
+            <div>Action</div>
+        </div>
+
+        <div class="sales-scroll-box">
+            <div id="salesList"></div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="bottom-back">
+    <a href="/shop-page">← Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

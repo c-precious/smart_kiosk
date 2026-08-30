@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debts - Smart Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+        <h1>Smart Kiosk</h1>
+        <div class="header-right">
+            <p id="debtsDate"></p>
+        </div>
+    </header>
+
+    <section class="welcome-section">
+        <h2 id="debtsShopName">Debts</h2>
+        <p>Track unpaid debts, due dates and repayments</p>
+    </section>
+
+    <section class="debts-main-card">
+
+        <div class="debts-header-row">
+            <h3>Debt List</h3>
+            <input type="text" id="debtSearch" placeholder="Search debt...">
+        </div>
+
+        <div class="debts-table-header">
+            <div>Customer</div>
+            <div>Amount</div>
+            <div>Due Date</div>
+            <div>Status</div>
+            <div>Action</div>
+        </div>
+
+        <div class="debts-scroll-box">
+            <div id="debtsList"></div>
+        </div>
+
+        <button id="showAddDebtBtn" class="add-product-small-btn">
+            + Add Debt
+        </button>
+
+    </section>
+
+</div>
+
+<div id="addDebtPopup" class="popup hidden">
+    <div class="popup-content">
+        <h3>Add Debt</h3>
+
+        <input type="text" id="manualDebtCustomerName" placeholder="Customer Name">
+        <input type="number" id="debtAmount" placeholder="Amount">
+        <input type="date" id="debtDueDate">
+
+        <button id="addDebtBtn">Save Debt</button>
+        <button id="closeDebtPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+<div id="editDebtPopup" class="popup hidden">
+    <div class="popup-content">
+        <h3>Edit Debt</h3>
+
+        <input type="hidden" id="editDebtId">
+        <input type="number" id="editDebtAmount" placeholder="Amount">
+        <input type="date" id="editDebtDueDate">
+
+        <select id="editDebtStatus">
+            <option value="unpaid">unpaid</option>
+            <option value="paid">paid</option>
+        </select>
+
+        <button id="updateDebtBtn">Update Debt</button>
+        <button id="closeEditDebtPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+<div id="payDebtPopup" class="popup hidden">
+    <div class="popup-content">
+        <h3>Record Payment</h3>
+
+        <input type="hidden" id="payDebtId">
+        <input type="number" id="amountPaid" placeholder="Amount Paid">
+
+        <button id="savePaymentBtn">Save Payment</button>
+        <button id="closePayDebtPopupBtn" class="secondary-btn">Cancel</button>
+    </div>
+</div>
+
+<div class="bottom-back">
+    <a id="debtsBackLink" href="/shop-page">← Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

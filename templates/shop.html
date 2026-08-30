@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Kiosk Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="top-header">
+        <h1>Smart Kiosk</h1>
+
+        <div class="header-right">
+            <p id="shopDate"></p>
+        </div>
+    </header>
+
+    <section class="welcome-section shop-title-section">
+        <h2 id="shopTitle">Shop</h2>
+        <p>Select what you want to manage</p>
+    </section>
+
+    <section class="features-section">
+        <div class="feature-grid">
+
+            <a href="/inventory-page" class="feature-card">
+                📦
+                <span>Stock</span>
+            </a>
+
+            <a href="/sales-page" class="feature-card">
+                🛒
+                <span>Sales</span>
+            </a>
+
+            <a href="/customers-page" class="feature-card">
+                👥
+                <span>Customers</span>
+            </a>
+
+            <a href="/debts-page" class="feature-card">
+                💰
+                <span>Debts</span>
+            </a>
+
+            <a href="/alerts-page" class="feature-card alert-feature-card">
+                🔔
+                <span>
+                    Alerts
+                    <small id="alertsBadge" class="alerts-badge hidden">0</small>
+                </span>
+            </a>
+
+            <a href="/reports-page" class="feature-card">
+                📊
+                <span>Analysis</span>
+            </a>
+
+        </div>
+    </section>
+
+</div>
+
+<div class="bottom-back">
+    <a href="/dashboard-page">← Back</a>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

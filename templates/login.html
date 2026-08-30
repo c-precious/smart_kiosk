@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Kiosk Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-body">
+
+<div class="auth-slideshow">
+    <div class="slide slide-grocery"></div>
+    <div class="slide slide-salon"></div>
+    <div class="slide slide-bodaboda"></div>
+</div>
+
+<div class="auth-overlay">
+
+    <div class="auth-card">
+
+        <h1>Smart Kiosk</h1>
+
+        <p class="auth-tagline">
+            Multi-business management system with inventory tracking,
+            debt management, AI business insights and M-PESA integration.
+        </p>
+
+        <h2>Welcome Back</h2>
+        <p>Login to manage your business</p>
+
+        <form id="loginForm">
+
+            <input type="email" id="email" placeholder="Enter Email" required>
+
+            <input type="password" id="password" placeholder="Enter Password" required>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p class="auth-link">
+            Don't have an account?
+            <a href="/register-page">Register</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

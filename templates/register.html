@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Smart Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-body">
+
+<div class="auth-slideshow">
+    <div class="slide slide-grocery"></div>
+    <div class="slide slide-salon"></div>
+    <div class="slide slide-bodaboda"></div>
+</div>
+
+<div class="auth-overlay">
+
+    <div class="auth-card">
+
+        <h1>Smart Kiosk</h1>
+
+        <p class="auth-tagline">
+            Manage products, services, debts, payments and business insights
+            from one simple system.
+        </p>
+
+        <h2>Create Owner Account</h2>
+        <p>Register to manage your shops</p>
+
+        <input type="text" id="registerName" placeholder="Full Name">
+        <input type="email" id="registerEmail" placeholder="Email Address">
+        <input type="text" id="registerPhone" placeholder="Phone Number">
+        <input type="password" id="registerPassword" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+        <button id="registerBtn">Create Account</button>
+
+        <p class="auth-link">
+            Already have an account?
+            <a href="/">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
